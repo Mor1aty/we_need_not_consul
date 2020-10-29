@@ -1,0 +1,16 @@
+syntax = "proto3";
+package proto;
+
+option go_package = "proto/pb";
+
+message HelloReq {
+  int32 id = 1;
+}
+
+message HelloResp {
+  string msg = 1;
+}
+
+service SayHelloHandler {
+  rpc SayHello(HelloReq) returns(HelloResp){}
+}
